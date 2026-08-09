@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PREPARA 360 - Fases de Implementación</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --text: #333;
+        }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: var(--primary); text-align: center; }
+        h2 { color: var(--secondary); margin-top: 30px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
+        .phase-grid { display: grid; gap: 20px; margin-top: 20px; }
+        .phase-card { background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 10px; transition: 0.3s; cursor: pointer; border-left: 5px solid var(--secondary); }
+        .phase-card:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); }
+        .modal-content { background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 10px; width: 80%; max-width: 600px; position: relative; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: black; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PREPARA 360</h1>
+        <p style="text-align: center; font-style: italic;">“Innovación Educativa, Ética y Permanencia para una Educación Transformadora”</p>
+        
+        <h2>Fases de Implementación</h2>
+        <div class="phase-grid">
+            <div class="phase-card" onclick="openModal('Fase I: Encuentro con Técnicos Distritales', 'Esta fase se centra en la alineación técnica, estableciendo las bases para la supervisión efectiva y el soporte técnico necesario para el despliegue del proyecto en los distritos.')">
+                <h3>Fase I: Técnicos Distritales</h3>
+                <p>Enfoque: Supervisión y soporte técnico.</p>
+            </div>
+            <div class="phase-card" onclick="openModal('Fase II: Encuentro con Técnicos y Directores', 'En esta etapa se involucra a la gestión administrativa y operativa. El objetivo es alinear las estrategias con las directrices de los centros, asegurando una ejecución coherente.')">
+                <h3>Fase II: Técnicos Distritales y Directores</h3>
+                <p>Enfoque: Gestión administrativa y operativa.</p>
+            </div>
+            <div class="phase-card" onclick="openModal('Fase III: Encuentro con Técnicos, Directores y Docentes', 'Esta fase se enfoca exclusivamente en el desarrollo pedagógico, integrando a todos los actores para asegurar la calidad de los procesos de enseñanza-aprendizaje.')">
+                <h3>Fase III: Técnicos, Directores y Docentes</h3>
+                <p>Enfoque: Parte pedagógica.</p>
+            </div>
+            <div class="phase-card" onclick="openModal('Fase IV: Prueba Piloto', 'Esta fase consiste en la ejecución de una prueba piloto en seis centros de preparatoria seleccionados, uno por cada distrito de la Regional 15.')">
+                <h3>Fase IV: Prueba Piloto</h3>
+                <p>Enfoque: Prueba piloto en seis centros seleccionados, uno por cada distrito de la Regional 15.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://edwinjoseruizcordero1976-source.github.io/Prepara-360-Fase-II/" target="_blank" style="color: var(--secondary); font-weight: bold;">Acceder al Portal de Fase II</a>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalBody"></p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('myModal').style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) closeModal();
+        }
+    </script>
+</body>
+</html>
